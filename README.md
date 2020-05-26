@@ -1,6 +1,10 @@
 # RANCiD docker container #
 
-![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/ipforpat/rancid-git) | ![Docker Pulls](https://img.shields.io/docker/pulls/ipforpat/rancid-git) | ![GitHub issues](https://img.shields.io/github/issues-raw/paddy01/rancid-git) | ![GitHub repo size](https://img.shields.io/github/repo-size/paddy01/rancid-git) | ![GitHub last commit](https://img.shields.io/github/last-commit/paddy01/rancid-git)
+![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/ipforpat/rancid-git) |
+![Docker Pulls](https://img.shields.io/docker/pulls/ipforpat/rancid-git) |
+![GitHub issues](https://img.shields.io/github/issues-raw/paddy01/rancid-git) |
+![GitHub repo size](https://img.shields.io/github/repo-size/paddy01/rancid-git) |
+![GitHub last commit](https://img.shields.io/github/last-commit/paddy01/rancid-git) |
 ![Maintenance](https://img.shields.io/maintenance/yes/2020)
 
 ## Description ##
