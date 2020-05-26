@@ -15,18 +15,13 @@ docker build --build-arg UID=<current_user_id:default=1000> \
   -t ipforpat/rancid-git .
 ```
 
-or build from docker hub
+or from docker hub
 
 ```
 docker pull ipforpat/rancid-git
-docker build --build-arg UID=<current_user_id:default=1000> \
-  --build-arg GID=<current_group_id:default=1000> \
-  --build-arg TIMEZONE='<your_time_zone:default=UTC>' \
-  -t ipforpat/rancid-git \
-  rancid-git
 ```
 
-or docker-compose from docker hub
+or docker-compose using github as base
 ```
 version: "3.6"
 services:
@@ -46,6 +41,7 @@ services:
         source: <directory_where_you_want_rancid_specific_configurations_and_repos>
         target: /home/rancid/var
 ```
+(this is the recommended - and tested - method if you expect to modify uid, gid and/or timezone with ease)
 
 ## RUN ##
 
