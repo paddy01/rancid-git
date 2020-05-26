@@ -1,4 +1,7 @@
-# rancid docker container #
+# RANCiD docker container #
+
+![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/ipforpat/rancid-git) | ![Docker Cloud Automated build](https://img.shields.io/docker/cloud/automated/ipforpat/rancid-git) | ![Docker Stars](https://img.shields.io/docker/stars/ipforpat/rancid-git) | ![Docker Pulls](https://img.shields.io/docker/pulls/ipforpat/rancid-git)
+![Maintenance](https://img.shields.io/maintenance/yes/2020)
 
 ## Description ##
 
