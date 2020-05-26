@@ -12,17 +12,17 @@ Build locally from a cloned git repository
 docker build --build-arg UID=<current_user_id:default=1000> \
   --build-arg GID=<current_group_id:default=1000> \
   --build-arg TIMEZONE='<your_time_zone:default=UTC>' \
-  -t paddy01/rancid-git .
+  -t ipforpat/rancid-git .
 ```
 
 or build from docker hub
 
 ```
-docker pull paddy01/rancid-git
+docker pull ipforpat/rancid-git
 docker build --build-arg UID=<current_user_id:default=1000> \
   --build-arg GID=<current_group_id:default=1000> \
   --build-arg TIMEZONE='<your_time_zone:default=UTC>' \
-  -t paddy01/rancid-git \
+  -t ipforpat/rancid-git \
   rancid-git
 ```
 
@@ -32,7 +32,7 @@ version: "3.6"
 services:
   rancid:
     build:
-      context: paddy01/rancid-git
+      context: ipforpat/rancid-git
       args:
         UID: <current_user_id:default=1000>
         GID: <current_group_id:default=1000>
