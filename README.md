@@ -3,7 +3,7 @@
 ## Description ##
 
 This will actually pull the latest release from https://github.com/haussli/rancid build it and install it.
-Adoptations has been done to make it easier to manage outside the docker instance but some things has to done inside the instance to make it work!
+Adaptations has been done to make it easier to manage outside the docker instance but some things has to done inside the instance to make it work!
 
 ## Build/Pull ##
 
@@ -117,7 +117,7 @@ Check cron is running as per <directory_where_you_want_global_configurations>/ra
 
 ## CREDITS ##
 
-  * This is an adoptation of the work done by biwhite
+  * This is an adaptation of the work done by biwhite
     - some texts are directly copied from biwhite's work
 
 ## LICENSE ##
