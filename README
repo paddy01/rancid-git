@@ -14,12 +14,13 @@ docker build --build-arg UID=<current_user_id:default=1000> \
   --build-arg TIMEZONE='<your_time_zone:default=UTC>' \
   -t ipforpat/rancid-git .
 ```
+(not tested)
 
 or from docker hub
-
 ```
 docker pull ipforpat/rancid-git
 ```
+(works but not recommended if you wish to modify uid,gid and timezone)
 
 or docker-compose using github as base
 ```
