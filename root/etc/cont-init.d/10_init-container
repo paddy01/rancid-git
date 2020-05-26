@@ -1,0 +1,47 @@
+#!/bin/bash -
+
+# if .cloginrc doesn't exist we copy up the sample into rancid home
+if [ ! -e /home/rancid/var/.cloginrc ];
+then
+    cp -rp /root/rancid-home/.???* /home/rancid/.
+    cp -rp /root/rancid-home/* /home/rancid/.
+    chown rancid:rancid /home/rancid
+    chmod o-rwx /home/rancid/var/.cloginrc
+fi
+
+# if the symbolic link to cloginrc is missing - we created it and make sure
+#   that the link and directory has correct permissions set
+if [ ! -h /home/rancid/.cloginrc ];
+then
+    cd /home/rancid
+    ln -s /home/rancid/var/.cloginrc /home/rancid/.cloginrc
+    cd /
+    chown rancid:rancid /home/rancid/.cloginrc
+    chmod 00640 /home/rancid/.cloginrc
+    chmod 00640 /home/rancid/var/.cloginrc
+fi
+
+# if the rancid lib is missing we copy it into rancid home
+if [ ! -e /home/rancid/lib ];
+then
+    cp -rp /root/rancid-lib /home/rancid/lib
+    chown rancid:rancid /home/rancid
+fi
+
+# if missing we copy missing sample files
+for file in lg.conf rancid.conf rancid.conf.sample rancid.cron rancid.types.base rancid.types.conf;
+do
+    if [ ! -e /etc/rancid/${file} ];
+    then
+        cp -fp /root/rancid-etc/${file} /etc/rancid
+    fi
+done
+
+# make sure we cleanup after git..
+find / -name ".gitkeep" -exec rm -f {} \;
+
+# fix attributes again if they were messedup from the above operations!
+for fix in /etc/fix-attrs.d/*;
+do
+    /usr/bin/fix-attrs < $fix
+done

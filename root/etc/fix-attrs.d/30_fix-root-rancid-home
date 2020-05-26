@@ -1,0 +1,4 @@
+/root/rancid-home true rancid:rancid 0644 0755
+/root/rancid-home/.gitconfig true rancid:rancid 0644 0755
+/root/rancid-home/.cloginrc true rancid:rancid 0640 0750
+/root/rancid-home/var/.cloginrc true rancid:rancid 0640 0750
