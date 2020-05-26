@@ -31,8 +31,9 @@ or docker-compose from docker hub
 version: "3.6"
 services:
   rancid:
+    image: ipforpat/rancid-git
     build:
-      context: ipforpat/rancid-git
+      context: https://github.com/paddy01/rancid-git.git
       args:
         UID: <current_user_id:default=1000>
         GID: <current_group_id:default=1000>
@@ -52,7 +53,7 @@ services:
 mkdir -p <directory_where_you_want_rancid_specific_configurations_and_repos>
 mkdir -p <directory_where_you_want_global_configurations>
 docker run -d --name rancid-git -v <directory_where_you_want_global_configurations>:/etc/rancid \
-  -v <directory_where_you_want_rancid_specific_configurations_and_repos>:/home/rancid biwhite/rancid-git
+  -v <directory_where_you_want_rancid_specific_configurations_and_repos>:/home/rancid ipforpat/rancid-git
 ```
 
 ## SETUP ##
