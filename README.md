@@ -52,7 +52,7 @@ services:
         target: /etc/rancid
       - type: bind
         source: <directory_where_you_want_rancid_specific_configurations_and_repos>
-        target: /home/rancid/var
+        target: /home/rancid
 ```
 (this is the recommended - and tested - method if you expect to modify uid, gid and/or timezone with ease)
 
@@ -89,7 +89,7 @@ docker-compose exec -u rancid rancid bash
 
 Whenever adding groups, run rancid-cvs which creates the required folders and
 initial git repository for your device group.  This will create a
-<directory_where_you_want_rancid_specific_configurations_and_repos>/GROUPNAME/ folder structure containing the git repository.  Do
+<directory_where_you_want_rancid_specific_configurations_and_repos>/var/GROUPNAME/ folder structure containing the git repository.  Do
 this as the rancid user so file ownership is set correctly.
 
 ```
@@ -108,8 +108,8 @@ or edit .cloginrc in <directory_where_you_want_rancid_specific_configurations_an
 
 Add devices into the list of devices to probe
 ```
-echo device1:cisco:up >> <directory_where_you_want_rancid_specific_configurations_and_repos>/devices/router.db
-echo device2:juniper:up >> <directory_where_you_want_rancid_specific_configurations_and_repos>/devices/router.db
+echo device1:cisco:up >> <directory_where_you_want_rancid_specific_configurations_and_repos>/var/devices/router.db
+echo device2:juniper:up >> <directory_where_you_want_rancid_specific_configurations_and_repos>/var/devices/router.db
 ```
 
 Perform an initial run to check it all works!
@@ -122,9 +122,9 @@ or with Docker Compose
 docker-compose exec -u rancid rancid rancid-run
 ```
 
-Logs for any errors in <directory_where_you_want_rancid_specific_configurations_and_repos>/logs/devices._yyyymmdd.hhmmss_
+Logs for any errors in <directory_where_you_want_rancid_specific_configurations_and_repos>/var/logs/devices._yyyymmdd.hhmmss_
 
-Check config grabs have appeared into <directory_where_you_want_rancid_specific_configurations_and_repos>/devices/configs/_hostname_
+Check config grabs have appeared into <directory_where_you_want_rancid_specific_configurations_and_repos>/var/devices/configs/_hostname_
 
 Check cron is running as per <directory_where_you_want_global_configurations>/rancid.cron file.
 
