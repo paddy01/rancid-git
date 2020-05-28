@@ -9,16 +9,21 @@ then
     chmod o-rwx /home/rancid/var/.cloginrc
 fi
 
-# if the symbolic link to cloginrc is missing - we created it and make sure
-#   that the link and directory has correct permissions set
-if [ ! -h /home/rancid/.cloginrc ];
+# make sure .cloginrc exists and has the correct permissions set
+#  (non world-readable!)
+if [ ! -e /home/rancid/.cloginrc ];
 then
-    cd /home/rancid
-    ln -s /home/rancid/var/.cloginrc /home/rancid/.cloginrc
-    cd /
+    touch /home/rancid/.cloginrc
     chown rancid:rancid /home/rancid/.cloginrc
     chmod 00640 /home/rancid/.cloginrc
-    chmod 00640 /home/rancid/var/.cloginrc
+fi
+
+# make sure .gitconfig exists in rancid home
+if [ ! -e /home/rancid/.gitconfig ];
+then
+    cp /root/rancid-home/.gitconfig /home/rancid/.gitconfig
+    chown rancid:rancid /home/rancid/.gitconfig
+    chmod 00640 /home/rancid/.gitconfig
 fi
 
 # if the rancid lib is missing we copy it into rancid home
